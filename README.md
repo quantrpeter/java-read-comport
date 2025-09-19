@@ -25,11 +25,11 @@ mvn -q exec:java -Dexec.args="--list"
 ```
 Send ping to `/dev/ttyACM0` at 115200 baud:
 ```bash
-mvn -q exec:java -Dexec.args="--port=/dev/ttyACM0 --baud=115200 --message=ping --timeout=1500"
+mvn -q exec:java -Dexec.args=$'--port=/dev/ttyACM0 --baud=115200 --newline=false --message=ping\r'
 ```
 Using the shaded jar:
 ```bash
-java -jar target/java-read-comport-0.1.0-shaded.jar --port=/dev/ttyACM0 --baud=115200 --message=ping
+java -jar target/java-read-comport-0.1.0.jar --port=/dev/ttyACM0 --baud=115200 --newline=false --message=$'ping\r'
 ```
 
 ## Options
